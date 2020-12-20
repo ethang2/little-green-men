@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/little-green-men/static/css/main.25026e7c.chunk.css",
+    "main.js": "/little-green-men/static/js/main.08601db7.chunk.js",
+    "main.js.map": "/little-green-men/static/js/main.08601db7.chunk.js.map",
+    "runtime-main.js": "/little-green-men/static/js/runtime-main.e5dec0f9.js",
+    "runtime-main.js.map": "/little-green-men/static/js/runtime-main.e5dec0f9.js.map",
+    "static/js/2.171a633d.chunk.js": "/little-green-men/static/js/2.171a633d.chunk.js",
+    "static/js/2.171a633d.chunk.js.map": "/little-green-men/static/js/2.171a633d.chunk.js.map",
+    "static/js/3.9f25ebf4.chunk.js": "/little-green-men/static/js/3.9f25ebf4.chunk.js",
+    "static/js/3.9f25ebf4.chunk.js.map": "/little-green-men/static/js/3.9f25ebf4.chunk.js.map",
+    "index.html": "/little-green-men/index.html",
+    "static/css/main.25026e7c.chunk.css.map": "/little-green-men/static/css/main.25026e7c.chunk.css.map",
+    "static/js/2.171a633d.chunk.js.LICENSE.txt": "/little-green-men/static/js/2.171a633d.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/little-green-men/static/media/SyneMono-Regular.8338a3dd.ttf",
+    "static/media/about.8412833a.svg": "/little-green-men/static/media/about.8412833a.svg",
+    "static/media/alien-hover.2bf71586.svg": "/little-green-men/static/media/alien-hover.2bf71586.svg",
+    "static/media/alien.95d4d942.svg": "/little-green-men/static/media/alien.95d4d942.svg",
+    "static/media/alien2.cd7adaaa.svg": "/little-green-men/static/media/alien2.cd7adaaa.svg",
+    "static/media/contact-form.813c3d78.svg": "/little-green-men/static/media/contact-form.813c3d78.svg",
+    "static/media/location.3454faae.svg": "/little-green-men/static/media/location.3454faae.svg",
+    "static/media/message.904b903c.svg": "/little-green-men/static/media/message.904b903c.svg",
+    "static/media/observatory.b886a1b1.svg": "/little-green-men/static/media/observatory.b886a1b1.svg",
+    "static/media/phone.3f53cbac.svg": "/little-green-men/static/media/phone.3f53cbac.svg",
+    "static/media/telescope.6aade4f6.svg": "/little-green-men/static/media/telescope.6aade4f6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e5dec0f9.js",
+    "static/js/2.171a633d.chunk.js",
+    "static/css/main.25026e7c.chunk.css",
+    "static/js/main.08601db7.chunk.js"
+  ]
+}
