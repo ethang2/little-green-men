@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/little-green-men/static/css/main.25026e7c.chunk.css",
-    "main.js": "/little-green-men/static/js/main.08601db7.chunk.js",
-    "main.js.map": "/little-green-men/static/js/main.08601db7.chunk.js.map",
+    "main.js": "/little-green-men/static/js/main.5aecda08.chunk.js",
+    "main.js.map": "/little-green-men/static/js/main.5aecda08.chunk.js.map",
     "runtime-main.js": "/little-green-men/static/js/runtime-main.e5dec0f9.js",
     "runtime-main.js.map": "/little-green-men/static/js/runtime-main.e5dec0f9.js.map",
     "static/js/2.171a633d.chunk.js": "/little-green-men/static/js/2.171a633d.chunk.js",
@@ -28,6 +28,6 @@
     "static/js/runtime-main.e5dec0f9.js",
     "static/js/2.171a633d.chunk.js",
     "static/css/main.25026e7c.chunk.css",
-    "static/js/main.08601db7.chunk.js"
+    "static/js/main.5aecda08.chunk.js"
   ]
 }
