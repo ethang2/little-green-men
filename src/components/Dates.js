@@ -22,8 +22,8 @@ const Dates = props => {
     }, [query, sightings, page]);
 
     const onClickHandler = () => {
-        setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/${props.type}/?year=${year}&month=${month}&page=${page}`);
         setPage(1);
+        setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/${props.type}/?year=${year}&month=${month}&page=${page}`);
     }
 
     const changeHandlerMonth = e => {
@@ -36,14 +36,23 @@ const Dates = props => {
 
     const nextPageHandler = () => {
         setPage(page + 1);
-        setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/${props.type}/?year=${year}&month=${month}&page=${page}`);
+        if (year === '' && month === '') {
+            setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/?type=${props.apiValue}&order=DESC&page=${page + 1}`);
+        } else {
+            setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/${props.type}/?year=${year}&month=${month}&page=${page + 1}`);
+        }
         setIsLoading(true);
     }
 
     const prevPageHandler = () => {
         if (page > 1) {
             setPage(page - 1);
-            setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/${props.type}/?year=${year}&month=${month}&page=${page}`);
+            if (year === '' && month === '') {
+                setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/?type=${props.apiValue}&order=DESC&page=${page - 1}`);
+            } else {
+                setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/${props.type}/?year=${year}&month=${month}&page=${page - 1}`);
+            }
+            setIsLoading(true);
         }
     }
 
@@ -83,6 +92,18 @@ const Dates = props => {
 
                 <button className="sightings-submit" onClick={onClickHandler}>Search</button>
             </div>
+
+            <div className="page-btn-group">
+                {
+                    (page < 2)
+                    ? <div></div>
+                    : <button className="page-btn page-prev-btn" onClick={prevPageHandler}>Previous</button>
+                }
+
+                <p>Page {page}</p>
+                
+                <button className="page-btn page-next-btn" onClick={nextPageHandler}>Next</button>
+            </div>
             
 
             <div className="sightings-list">
@@ -99,6 +120,8 @@ const Dates = props => {
                     ? <div></div>
                     : <button className="page-btn page-prev-btn" onClick={prevPageHandler}>Previous</button>
                 }
+
+                <p>Page {page}</p>
                 
                 <button className="page-btn page-next-btn" onClick={nextPageHandler}>Next</button>
             </div>

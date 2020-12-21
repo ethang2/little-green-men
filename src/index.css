@@ -268,9 +268,11 @@ footer {
 }
 
 .page-btn-group {
-  padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px 10px;
+  text-align: center;
+  justify-content: center;
 }
 
 .page-btn-group button {
@@ -294,10 +296,6 @@ footer {
   background-color: #3cd070;
   color: #17141d;
   transform: translateX(-5px);
-}
-
-.page-next-btn {
-  float: right;
 }
 
 /* Heat Map /////////////////////////////////////////////////////////////////////////////*/

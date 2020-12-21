@@ -4,10 +4,11 @@ import SightingPreview from './SightingPreview';
 import Options from './Options';
 
 const ShapesAndStates = props => {
-    let [value, setValue] = useState();
+    let [value, setValue] = useState('');
     const [sightings, setSightings] = useState([]);
     const [query, setQuery] = useState(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/?type=${props.value}&order=ASC`);
     const [isLoading, setIsLoading] = useState(true);
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
         fetch(query)
@@ -15,14 +16,37 @@ const ShapesAndStates = props => {
             .then(data => setSightings(data))
             .catch(error => console.log(error))
             .finally(() => setIsLoading(false));
-    }, [query, sightings]);
+    }, [query, sightings, page]);
 
     const onClickHandler = () => {
-        setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/${props.type}/?${props.value}=${value}`);
+        setPage(1);
+        setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/${props.type}/?${props.value}=${value}&page=${page}`);
     }
 
     const changeHandler = e => {
         setValue(value = e.target.value);
+    }
+
+    const nextPageHandler = () => {
+        setPage(page + 1);
+        if (value === '') {
+            setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/?type=${props.value}&order=ASC&page=${page + 1}`);
+        } else {
+            setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/${props.type}/?${props.value}=${value}&page=${page + 1}`);
+        }
+        setIsLoading(true);
+    }
+
+    const prevPageHandler = () => {
+        if (page > 1) {
+            setPage(page - 1);
+            if (value === '') {
+                setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/?type=${props.value}&order=ASC&page=${page - 1}`);
+            } else {
+                setQuery(`https://ufo-sightings-api.herokuapp.com/api/ufosightings/${props.type}/?${props.value}=${value}&page=${page - 1}`);
+            }
+            setIsLoading(true);
+        }
     }
 
     const data = props.data;
@@ -47,6 +71,17 @@ const ShapesAndStates = props => {
                 <button className="sightings-submit" onClick={onClickHandler}>Search</button>
             </div>
             
+            <div className="page-btn-group">
+                {
+                    (page < 2)
+                    ? <div></div>
+                    : <button className="page-btn page-prev-btn" onClick={prevPageHandler}>Previous</button>
+                }
+
+                <p>Page {page}</p>
+                
+                <button className="page-btn page-next-btn" onClick={nextPageHandler}>Next</button>
+            </div>
 
             <div className="sightings-list">
                 {
@@ -55,6 +90,19 @@ const ShapesAndStates = props => {
                     : sightingsList
                 }
             </div>
+
+            <div className="page-btn-group">
+                {
+                    (page < 2)
+                    ? <div></div>
+                    : <button className="page-btn page-prev-btn" onClick={prevPageHandler}>Previous</button>
+                }
+
+                <p>Page {page}</p>
+                
+                <button className="page-btn page-next-btn" onClick={nextPageHandler}>Next</button>
+            </div>
+
         </div>
     );
 }
